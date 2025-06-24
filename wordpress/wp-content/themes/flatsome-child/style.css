@@ -1,0 +1,762 @@
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.19.8
+*/
+
+/*************** ADD CUSTOM CSS HERE. ***************/
+
+/* Global box-sizing reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Custom Checklist Styles */
+.custom-checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-checklist li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.custom-checklist li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/44/44569.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Ensure list items within specific containers do not have extra left margin */
+.col-inner ol li,
+.col-inner ul li,
+.entry-content ol li,
+.entry-content ul li,
+.entry-summary ol li,
+.entry-summary ul li {
+    margin-left: 0 !important;
+}
+
+/* Styles for specific text blocks (e.g., Contact Form headings) */
+#text-715561285,
+#text-4264050225 {
+    text-align: center;
+}
+
+/* Style form background */
+#wpcf7-f7-p8-o1 {
+    background-color: #fcf0f0;
+    padding: 40px 25px 0px 25px;
+    border-radius: 8px;
+}
+
+/* Style heading for specific text block */
+#text-715561285 h2.uppercase {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Style paragraph for specific text block */
+#text-4264050225 p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* Style input fields for Contact Form 7 */
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form textarea {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+/* Fix label spacing for Contact Form 7 */
+.wpcf7-form label {
+    font-weight: 600;
+    display: block;
+    font-size: 15px;
+}
+
+/* Style submit button for Contact Form 7 */
+.wpcf7-form input[type="submit"] {
+    background-color: #d81f26;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    /* Ensures button is full width by default */
+}
+
+.wpcf7-form input[type="submit"]:hover {
+    background-color: #b50008;
+}
+
+/* Banner specific styles */
+.banner h2 {
+    line-height: 1.3;
+}
+
+.banner .button {
+    animation: pulse 2s infinite;
+}
+
+/* Navbar on mobile screen */
+.nav-sidebar .header-button-1,
+.nav-sidebar .header-button-2,
+.nav-sidebar .social-icons.follow-icons {
+    display: none !important;
+}
+
+/* Styles cho các mục menu trong nav bar mobile */
+.nav-sidebar li a {
+    font-family: 'Roboto', sans-serif !important;
+    /* Áp dụng font Roboto */
+    font-size: 1.1em !important;
+    /* Tăng kích thước font cho các mục menu */
+    color: #d02036 !important;
+    /* Đặt màu đỏ */
+    padding: 12px 15px !important;
+    /* Điều chỉnh padding nếu cần */
+    line-height: 1.5;
+    /* Điều chỉnh line-height cho dễ đọc */
+}
+
+/* Styles cho các mục menu con (sub-menu items) */
+.nav-sidebar ul.children a {
+    font-size: 1em !important;
+    /* Kích thước nhỏ hơn một chút cho sub-menu */
+    padding-left: 30px !important;
+    /* Thụt lề cho sub-menu */
+    color: #d02036 !important;
+    /* Đặt màu đỏ cho sub-menu */
+}
+
+.nav-dropdown.nav-dropdown-default li a {
+    color: #d02036 !important;
+    /* Đặt màu đỏ */
+}
+
+.nav-dropdown.nav-dropdown-default li a:hover {
+    color: #6a0207 !important;
+}
+
+/* Add the keyframes for the pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/*************** RESPONSIVE STYLES ***************/
+/***********************************/
+
+/* 1️⃣ Base Styles for all screens smaller than 1025px (Tablets & Mobiles) */
+@media (max-width: 1024px) {
+
+    /* Global font size adjustment */
+    body {
+        font-size: 15px;
+    }
+
+    /* FIX: Center the decorative divider line and add padding below it */
+    .is-divider.divider {
+        margin: 0 auto !important;
+        /* Centers the divider */
+        margin-bottom: 20px !important;
+        /* Add padding below the divider */
+    }
+
+    /* Reduce overall section padding */
+    .section {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+
+    /* Force columns to stack vertically and center them */
+    .row:not(.row-collapse) {
+        flex-direction: column !important;
+        /* Forces columns to stack */
+        align-items: center !important;
+        /* Centers the stacked columns */
+    }
+
+    /* Ensure all col-related classes take full width */
+    .col.medium-6,
+    .col.medium-8,
+    .col.medium-4,
+    .col.medium-7,
+    .col.medium-5,
+    .col.large-6,
+    .col.large-8,
+    .col.large-4 {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Adjust padding within columns and center text */
+    .col-inner {
+        padding: 15px !important;
+        /* Consistent padding */
+        text-align: center !important;
+        /* Center text content */
+    }
+
+    /* Specific padding for collapsed rows (e.g., heading sections) */
+    .row.row-collapse>.col>.col-inner {
+        padding: 15px 0px !important;
+        /* Reduced horizontal padding */
+    }
+
+    /* Heading adjustments */
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+
+    /* Image aspect ratio adjustments for general images */
+    .img-inner {
+        padding-top: 55% !important;
+        /* A good balance for general images on tablets */
+    }
+
+    /* Remove left border/padding for .col-divided when stacked */
+    .col-divided .col-inner {
+        border-left: none !important;
+        padding-left: 0 !important;
+    }
+
+    /* Adjust for form #row-287972914 */
+    #row-287972914,
+    #row-287972914>.col,
+    #row-287972914 .col-inner,
+    #row-287972914 .wpcf7,
+    #row-287972914 .wpcf7-form {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 1 100% !important;
+        display: block !important;
+        box-sizing: border-box !important;
+    }
+
+    #row-287972914 .wpcf7-form-control,
+    #row-287972914 .wpcf7-form p,
+    #row-287972914 .wpcf7-form label {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #row-287972914 .col-inner {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Styles for the contact section (specific IDs) */
+    #section_1060314769 {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    #row-1347909258 {
+        flex-direction: column !important;
+        /* Forces the two main columns to stack */
+        align-items: center !important;
+        /* Centers the stacked columns */
+    }
+
+    #col-1360018633,
+    #col-2132024880 {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #col-1360018633>.col-inner,
+    #col-2132024880>.col-inner {
+        padding: 20px !important;
+        /* General padding for these main sections */
+        box-sizing: border-box !important;
+    }
+
+    #text-4182019918,
+    #text-2135583955,
+    #text-4108222896 {
+        text-align: center !important;
+        /* Override inline left-align for mobile */
+    }
+
+    #row-2036142240,
+    #row-921596761,
+    #row-1648540869 {
+        flex-direction: column !important;
+        /* Stack icon and text vertically */
+        align-items: center !important;
+        /* Center stacked items */
+        margin-bottom: 15px !important;
+        /* Space between each contact item */
+    }
+
+    #col-2050788595,
+    /* call icon col */
+    #col-348508584,
+    /* email icon col */
+    #col-619800961 {
+        /* address icon col */
+        width: 100% !important;
+        /* Take full width of parent row */
+        max-width: 60px !important;
+        /* Limit max width for icon column */
+        margin-bottom: 10px !important;
+        /* Space between icon and text */
+        padding: 0 !important;
+        /* Remove any default padding */
+        display: flex !important;
+        /* Use flex to center icon */
+        justify-content: center !important;
+        /* Center icon horizontally */
+        align-items: center !important;
+        /* Center icon vertically */
+    }
+
+    #col-2050788595>.col-inner,
+    #col-348508584>.col-inner,
+    #col-619800961>.col-inner {
+        padding: 0 !important;
+    }
+
+    #image_651742307,
+    /* call icon */
+    #image_530727016,
+    /* email icon */
+    #image_1726408516 {
+        /* address icon */
+        width: 100% !important;
+        /* Make image fill its container */
+        max-width: 50px !important;
+        /* Set a specific max width for the icon image */
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        /* Center the icon image */
+    }
+
+    /* These specific column styles might be redundant if col-inner already centers text */
+    #col-1698330793,
+    /* phone text col */
+    #col-1970136821,
+    /* email text col */
+    #col-712352853 {
+        /* address text col */
+        width: 100% !important;
+        /* Take full width */
+        text-align: center !important;
+        /* Center text */
+        padding-left: 0 !important;
+        /* Remove horizontal padding, already handled by main .col */
+        padding-right: 0 !important;
+    }
+
+    #col-2132024880 {
+        margin-top: 30px !important;
+        /* Add space above the form on mobile */
+    }
+
+    #col-2132024880>.col-inner {
+        padding: 25px 20px !important;
+        /* More padding inside the form box */
+    }
+
+    /* Utility class for responsive text alignment and sizing */
+    .center-text-align-responsive {
+        text-align: center !important;
+        /* Forces center alignment */
+        line-height: 1.4 !important;
+        /* Adjust line height for readability */
+        font-size: 1.1em !important;
+        /* Slightly larger font size for mobile/tablet */
+    }
+
+    .center-text-align-responsive strong {
+        font-size: 1.2em !important;
+        /* Make bold text even larger */
+    }
+
+    /* Contact Form 7 specific adjustments within responsive media query */
+    .wpcf7-form-control-wrap {
+        width: 100% !important;
+    }
+
+    .wpcf7-form-control {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .wpcf7-text,
+    .wpcf7-email,
+    .wpcf7-textarea {
+        padding: 10px 12px !important;
+        /* Adjust padding for input fields */
+        font-size: 1em !important;
+        /* Ensure readable font size */
+    }
+}
+
+/* 2️⃣ Mobile Specific Styles (Smaller than 768px) */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Headings on smaller mobiles */
+    h2 {
+        font-size: 1.5em !important;
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1.05em;
+    }
+
+    p,
+    li,
+    blockquote {
+        font-size: 0.95em;
+    }
+
+    /* Global Padding for all columns on mobile to ensure safe margins */
+    .col {
+        padding-left: 15px !important;
+        /* Minimum safe margin from left */
+        padding-right: 15px !important;
+        /* Minimum safe margin from right */
+        box-sizing: border-box !important;
+        /* Ensure padding is included in element's total width */
+    }
+
+    /* Adjust padding for column inners on mobile (if they are still needed, this pads inside the col's padding) */
+    .col-inner {
+        padding-top: 15px !important;
+        /* Consistent top padding */
+        padding-bottom: 15px !important;
+        /* Consistent bottom padding */
+        padding-left: 0 !important;
+        /* Reset left padding, handled by .col */
+        padding-right: 0 !important;
+        /* Reset right padding, handled by .col */
+        text-align: center !important;
+        /* Ensure text is centered */
+    }
+
+    /* More aggressive image aspect ratio for general images on mobiles */
+    .img-inner {
+        padding-top: 65% !important;
+    }
+
+    /* Banner specific adjustments */
+    .banner-layers.container {
+        padding: 20px !important;
+    }
+
+    .text-box.banner-layer {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .text-box-content.text {
+        font-size: 90% !important;
+    }
+
+    /* Reverted: General Button styles for mobile (no forced centering or full width) */
+    .button.primary {
+        padding: 0.75em 1.5em;
+        /* Original padding */
+        font-size: 0.9rem;
+        /* Original font size */
+        font-weight: 700;
+        text-align: center;
+        /* Default text align */
+        line-height: 1.4;
+        border-radius: 6px;
+        display: inline-block;
+        /* Default display */
+    }
+
+    /* Styles specifically for the form submit button */
+    .form-submit-button {
+        width: 100% !important;
+        /* Force full width on mobile */
+        max-width: 280px !important;
+        /* Set a reasonable max-width*/
+        padding: 12px 15px !important;
+        /* Adjust padding*/
+        font-size: 1.1rem !important;
+        /* Make font size slightly larger*/
+        font-weight: 700 !important;
+        text-align: center !important;
+        /* Center text inside button*/
+        line-height: 1.4 !important;
+        border-radius: 6px !important;
+        display: block !important;
+        /* Make it a block element*/
+        margin-left: auto !important;
+        /* Center the button*/
+        margin-right: auto !important;
+        /* Center the button*/
+        box-sizing: border-box !important;
+        /* Include padding in width calculation*/
+        white-space: normal !important;
+        /* Allow text to wrap*/
+    }
+
+    /* Custom checklist alignment */
+    .custom-checklist li {
+        margin-left: 20px;
+        text-align: left;
+        /* Ensure list items are left-aligned */
+    }
+
+    /* Fix for Icon Sizing and Spacing in "Giá trị cốt lõi" section using class */
+    /* Ensure the main container for values takes full width */
+    #col-313605047 {
+        width: 100% !important;
+    }
+
+    /* Style for the icon container based on its new class */
+    .icon-img-nho {
+        width: 100% !important;
+        /* Ensure the img div takes full width of its small column */
+        max-width: 90px !important;
+        /* Force max-width for the icon container */
+        display: block !important;
+        /* Make sure it's a block element for centering */
+        margin: 0 auto !important;
+        /* Center the icon container */
+    }
+
+    /* Style the img-inner directly within the icon-img-nho */
+    .icon-img-nho .img-inner {
+        padding-top: 0 !important;
+        /* Crucial: Remove padding-top often used for aspect ratio */
+        padding-bottom: 0 !important;
+        /* Ensure no extra padding below */
+        height: auto !important;
+        /* Adjust height based on content */
+    }
+
+    /* Style the actual <img> tag aggressively within the icon-img-nho */
+    .icon-img-nho img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: contain;
+    }
+
+    /* Ensure the column containing the icon is compact and centered */
+    #col-313605047 .row.align-middle .col.medium-3 {
+        width: 30% !important;
+        max-width: 90px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Ensure the col-inner inside the icon column has no padding */
+    #col-313605047 .row.align-middle .col.medium-3 .col-inner {
+        padding: 0 !important;
+    }
+
+    /* Ensure the rows for each value item stack and center */
+    #col-313605047 .row.align-middle {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 20px;
+    }
+
+    /* Ensure the text column takes full width on mobile */
+    #col-313605047 .row.align-middle .col.medium-9 {
+        width: 100% !important;
+    }
+
+    /* Blog Masonry Layout (if used, keep it) */
+    .row-masonry {
+        position: relative !important;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* Styles for .text-cuoi-gt on mobile */
+    .text-cuoi-gt {
+        margin-top: 20px !important;
+        /* Add top margin */
+        margin-bottom: 20px !important;
+        /* Add bottom margin */
+        padding-left: 0 !important;
+        /* Ensure no extra padding from text-cuoi-gt itself */
+        padding-right: 0 !important;
+        /* Ensure no extra padding from text-cuoi-gt itself */
+        /* Note: Horizontal spacing is handled by the parent .col padding */
+    }
+}
+
+/* 3️⃣ Very Small Mobile Devices (e.g., max-width 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+
+    h2 {
+        font-size: 1.3em !important;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    h4 {
+        font-size: 0.9em;
+    }
+
+    p,
+    li,
+    blockquote {
+        font-size: 0.85em;
+    }
+
+    /* More aggressive image aspect ratio for general images on very small screens */
+    .img-inner {
+        padding-top: 70% !important;
+    }
+
+    /* Button adjustment for very small mobile, targeting new class */
+    .form-submit-button {
+        max-width: 250px !important;
+        /* Slightly smaller max-width for very small screens*/
+        font-size: 1rem !important;
+        /* Slightly smaller font size*/
+        padding: 10px 12px !important;
+        /* Adjust padding*/
+    }
+
+    /* Icon size for very small mobiles in "Giá trị cốt lõi" - using the new class */
+    .icon-img-nho {
+        max-width: 70px !important;
+    }
+
+    .icon-img-nho .img-inner {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .icon-img-nho img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+
+    /* Adjust the column holding the icon for very small screens */
+    #col-313605047 .row.align-middle .col.medium-3 {
+        width: 45% !important;
+        max-width: 70px !important;
+    }
+
+    /* Styles for .text-cuoi-gt on very small mobile */
+    .text-cuoi-gt {
+        margin-top: 15px !important;
+        /* Slightly reduced top margin for very small screens */
+        margin-bottom: 15px !important;
+        /* Slightly reduced bottom margin for very small screens */
+        margin-left: 30px !important;
+        /* Added left margin*/
+        margin-right: 30px !important;
+        /* Added right margin*/
+    }
+
+    /* Contact Section Specific Adjustments for very small mobile */
+    #col-1360018633>.col-inner,
+    #col-2132024880>.col-inner {
+        padding: 15px !important;
+    }
+
+    #text-4182019918 h2 {
+        font-size: 1.3em !important;
+    }
+
+    #text-2135583955 p,
+    #text-4108222896 p {
+        font-size: 0.85em !important;
+    }
+
+    .wpcf7-text,
+    .wpcf7-email,
+    .wpcf7-textarea {
+        padding: 8px 10px !important;
+        font-size: 0.9em !important;
+    }
+
+    /* Utility class for responsive text alignment and sizing on very small mobile */
+    .center-text-align-responsive {
+        font-size: 1em !important;
+        /* Smaller but still readable on very small screens */
+    }
+
+    .center-text-align-responsive strong {
+        font-size: 1.1em !important;
+        /* Bold text size on very small screens */
+    }
+}

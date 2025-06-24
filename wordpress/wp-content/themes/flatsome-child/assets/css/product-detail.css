@@ -1,0 +1,260 @@
+#main {
+  /* overflow: hidden; */
+}
+h1,
+.h1 {
+  margin-bottom: 2rem;
+}
+.h1 {
+  opacity: 0;
+}
+
+/* ============ Start Banner ============ */
+.custom-banner-gallery {
+  margin-bottom: 0 !important;
+}
+.custom-banner-gallery .banner-item {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 700;
+  overflow: hidden;
+}
+.custom-banner-gallery .banner-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slick-initialized .slick-slide {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440/700;
+}
+.slick-initialized .slick-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slick-prev,
+.slick-next {
+  width: max-content;
+  height: max-content;
+}
+
+.slick-prev {
+  left: 2rem;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.slick-next {
+  right: 2rem;
+  transform: translate(50%, -50%);
+}
+.slick-prev:before,
+.slick-next:before {
+  font-size: unset;
+  content: "";
+  display: inline-block;
+  width: 15px;
+  aspect-ratio: 15/30;
+  height: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.slick-prev:before {
+  background-image: url("/wp-content/uploads/2025/02/right-arrow.svg");
+}
+.slick-next:before {
+  background-image: url("/wp-content/uploads/2025/02/left-arrow.svg");
+}
+
+/* ============ End Banner ============ */
+
+/* ============ Start custom-product-detail ============ */
+.custom-product-detail {
+  position: relative;
+}
+.custom-product-detail .bg-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  object-fit: contain;
+  height: auto;
+  width: 60%;
+  z-index: 0;
+}
+.custom-product-detail .container-1170 {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Start Info */
+.custom-product-detail .custom-col-info {
+  flex-grow: 1;
+  max-width: 500px;
+  position: sticky;
+  top: 50px;
+  left: 0;
+  height: max-content;
+}
+.custom-product-detail .custom-col-info p {
+  margin-bottom: 0.75rem;
+}
+/* End Info */
+
+/* Start Thông số kỹ thuật  */
+.custom-product-detail .custom-col-parameters {
+  flex-grow: 1;
+  max-width: 570px;
+}
+.custom-product-detail .custom-col-parameters h3 {
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.custom-product-detail .custom-col-parameters h3::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: var(--primary-color);
+}
+.custom-product-accordion .custom-accordion-item {
+  padding-top: 1.25rem;
+  border-top: 1px solid #d9d9d9;
+}
+.custom-product-accordion .custom-accordion-item.active {
+  padding-bottom: 1.25rem;
+}
+.custom-product-accordion .custom-accordion-item:first-child {
+  border-top: unset;
+  padding-top: 0;
+}
+.custom-product-accordion .custom-accordion-title {
+  background: transparent;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.custom-product-accordion .custom-accordion-title span {
+  flex-grow: 1;
+}
+.custom-product-accordion .custom-accordion-title::before {
+  content: "";
+  width: 3px;
+  height: 26px;
+  background-color: var(--primary-color);
+  flex-shrink: 0;
+}
+.custom-product-accordion .custom-accordion-title::after {
+  content: "";
+  width: 1.1875rem;
+  height: 1.1875rem;
+  flex-shrink: 0;
+  background-image: url("/wp-content/uploads/2025/01/plus.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
+}
+.custom-product-accordion
+  .custom-accordion-item.active
+  .custom-accordion-title::after {
+  background-image: url("/wp-content/uploads/2025/01/minus.svg");
+}
+.custom-product-accordion .custom-accordion-content {
+  display: none;
+  animation: slideDown 0.3s ease-out;
+}
+.custom-product-accordion
+  .custom-accordion-item.active
+  .custom-accordion-content {
+  display: block;
+}
+.custom-info-table tbody tr td {
+  padding: 0.5rem 1rem;
+  line-height: 1.3;
+  font-weight: 400;
+  color: var(--primary-color);
+  border-bottom: unset;
+  text-transform: capitalize;
+}
+.custom-info-table tbody tr td:nth-child(2) {
+  text-align: right;
+}
+.custom-info-table tbody tr:nth-child(odd) {
+  background-color: #f4efec; /* Màu nhạt cho dòng lẻ */
+}
+.custom-info-table tbody tr:nth-child(even) {
+  background-color: #fff; /* Màu trắng cho dòng chẵn */
+}
+
+/* End Thông số kỹ thuật  */
+/* ============ End custom-product-detail ============ */
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 1000px;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .custom-product-detail .custom-col-info {
+    top: 110px;
+  }
+  .custom-product-detail .custom-col-parameters {
+    min-width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .custom-product-detail .custom-col-parameters,
+  .custom-product-detail .custom-col-info {
+    max-width: unset;
+    width: 100%;
+  }
+  .custom-product-detail .container-1170 {
+    flex-wrap: wrap;
+    padding-bottom: 4rem;
+  }
+  .custom-product-detail .custom-col-info {
+    position: static;
+  }
+  .custom-product-detail .container-1170 .h1 {
+    display: none;
+  }
+  h2,
+  .h2,
+  .banner h2.normal {
+    font-size: 4vw;
+  }
+  .custom-product-detail .custom-col-parameters h3 {
+    font-size: 1rem;
+  }
+  .slick-initialized .slick-slide {
+    aspect-ratio: 1440 / 700;
+  }
+  .slick-initialized .slick-slide img {
+    object-fit: cover;
+  }
+  .slick-prev {
+    left: 1rem;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 1rem;
+  }
+}
